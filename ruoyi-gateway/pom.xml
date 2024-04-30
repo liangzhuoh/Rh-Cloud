@@ -88,6 +88,11 @@
             <version>${swagger.fox.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>ruoyi-config</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

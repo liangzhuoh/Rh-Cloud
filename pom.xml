@@ -223,10 +223,18 @@
                 <version>${ruoyi.version}</version>
             </dependency>
 
+            <!-- 系统接口 -->
+            <dependency>
+                <groupId>com.ruoyi</groupId>
+                <artifactId>ruoyi-config</artifactId>
+                <version>${ruoyi.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
     <modules>
+        <module>ruoyi-config</module>
         <module>ruoyi-auth</module>
         <module>ruoyi-gateway</module>
         <module>ruoyi-visual</module>

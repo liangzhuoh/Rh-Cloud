@@ -2,6 +2,7 @@ version : '3.8'
 services:
   ruoyi-nacos:
     container_name: ruoyi-nacos
+    mem_limit: 256m
     image: nacos/nacos-server
     build:
       context: ./nacos
@@ -18,6 +19,7 @@ services:
       - ruoyi-mysql
   ruoyi-mysql:
     container_name: ruoyi-mysql
+    mem_limit: 256m
     build:
       context: ./mysql
     ports:
@@ -41,6 +43,7 @@ services:
   ruoyi-redis:
     container_name: ruoyi-redis
     image: redis
+    mem_limit: 256m
     build:
       context: ./redis
     ports:
@@ -52,6 +55,7 @@ services:
   ruoyi-nginx:
     container_name: ruoyi-nginx
     image: nginx
+    mem_limit: 300m
     build:
       context: ./nginx
     ports:
@@ -67,6 +71,7 @@ services:
       - ruoyi-gateway
   ruoyi-gateway:
     container_name: ruoyi-gateway
+    mem_limit: 512m
     build:
       context: ./ruoyi/gateway
       dockerfile: dockerfile
@@ -78,6 +83,7 @@ services:
       - ruoyi-redis
   ruoyi-auth:
     container_name: ruoyi-auth
+    mem_limit: 512m
     build:
       context: ./ruoyi/auth
       dockerfile: dockerfile
@@ -89,6 +95,7 @@ services:
       - ruoyi-redis
   ruoyi-modules-system:
     container_name: ruoyi-modules-system
+    mem_limit: 512m
     build:
       context: ./ruoyi/modules/system
       dockerfile: dockerfile
@@ -102,6 +109,7 @@ services:
       - ruoyi-mysql
   ruoyi-modules-gen:
     container_name: ruoyi-modules-gen
+    mem_limit: 256m
     build:
       context: ./ruoyi/modules/gen
       dockerfile: dockerfile
@@ -113,6 +121,7 @@ services:
       - ruoyi-mysql
   ruoyi-modules-job:
     container_name: ruoyi-modules-job
+    mem_limit: 256m
     build:
       context: ./ruoyi/modules/job
       dockerfile: dockerfile
@@ -124,6 +133,7 @@ services:
       - ruoyi-mysql
   ruoyi-modules-file:
     container_name: ruoyi-modules-file
+    mem_limit: 256m
     build:
       context: ./ruoyi/modules/file
       dockerfile: dockerfile
@@ -133,6 +143,7 @@ services:
     - ./ruoyi/uploadPath:/home/ruoyi/uploadPath
   ruoyi-visual-monitor:
     container_name: ruoyi-visual-monitor
+    mem_limit: 256m
     build:
       context: ./ruoyi/visual/monitor
       dockerfile: dockerfile
